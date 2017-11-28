@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        int menuItemThatWasSelected = menu.get.getItemId();
-        if(menuItemThatWasSelected == R.id.action_refresh){
+        getMenuInflater().inflate(R.menu.forecast,menu);
         return true;
+
     }
 
 
@@ -118,8 +118,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        mWeatherTextView.clearComposingText();
-        loadWeatherData();
+        int menuItemWasSelected = item.getItemId();
+        if(menuItemWasSelected == R.id.action_refresh)
+        {
+            mWeatherTextView.clearComposingText();
+            loadWeatherData();
+        }
         return true;
     }
 }
