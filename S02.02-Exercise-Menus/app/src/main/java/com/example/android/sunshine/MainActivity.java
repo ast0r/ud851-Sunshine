@@ -123,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
         {
             mWeatherTextView.setText("");
             loadWeatherData();
+            return true;
         }
-        return true;
+        return  super.onOptionsItemSelected(item);
     }
 }
